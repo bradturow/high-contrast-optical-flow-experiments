@@ -17,4 +17,4 @@ density_k = 300
 density_fraction = 0.50
 expected_patch_count = 25000
 cover_landmarks = 16
-
+cover_overlap = 1.99

@@ -3,10 +3,12 @@
 Computational experiments supporting the manuscript *An Extended Topological
 Model for High-Contrast Optical Flow*.
 
-> **Staging status:** the source notebooks have been recovered from the legacy
-> research archive, but they have not yet been modernized or re-executed in this
-> repository. Historical numerical results are recorded only as validation
-> targets, not as claims of a fresh reproduction.
+> **Migration status:** the recovered sources are preserved unchanged. The
+> modernized extended-torus notebook and quick profile now execute successfully
+> from raw Sintel flow frames in a clean environment. The manuscript-scale
+> $X(1500,50)$ analysis also executes from the verified recovered preprocessing
+> artifact. Rebuilding that 250,000-row artifact from raw Sintel, plus the
+> clustering/boundary notebooks, remains to be validated.
 
 ## Experiment pipeline
 
@@ -37,7 +39,8 @@ the results are declared reproduced.
 
 ## Repository layout
 
-- `notebooks/`: the three cleanest legacy experiment notebooks, copied exactly.
+- `notebooks/`: the modernized extended-torus experiment plus three exact legacy
+  migration sources.
 - `legacy_sources/`: supporting figure/data-exploration notebooks, also copied
   exactly and retained only as migration sources.
 - `configs/`: explicit reduced and manuscript-scale parameters.
@@ -65,19 +68,41 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.in
 ```
 
-`requirements.in` is a bootstrap specification, not yet a tested lock file. A
-platform-specific lock will be generated only after the full notebooks run
-successfully in a clean environment.
+`requirements.in` is the human-maintained bootstrap specification.
+`requirements-lock.txt` records the clean environment used for the successful
+macOS arm64 / Python 3.13 quick-profile run.
+
+## Run the extended-torus experiment
+
+To construct the quick artifact deterministically from raw Sintel and execute
+the notebook:
+
+```bash
+source .venv/bin/activate
+python scripts/prepare_data.py \
+  --config configs/quick.toml \
+  --flow-root /path/to/MPI-Sintel-complete/training/flow \
+  --output data/preprocessed_quick.v1.npz
+jupyter nbconvert --to notebook --execute \
+  notebooks/01_extended_torus.ipynb \
+  --output 01_extended_torus_executed.ipynb \
+  --output-dir results/quick \
+  --ExecutePreprocessor.timeout=1800
+```
+
+For the manuscript-scale analysis, set `OPTICAL_FLOW_PROFILE` and
+`OPTICAL_FLOW_PREPROCESSED` to `configs/paper.toml` and a compatible 250,000-row
+portable artifact, respectively.
 
 ## Reproducibility status
 
 - [x] Identify and preserve the canonical legacy notebook sources.
 - [x] Record hashes for source notebooks and large local data artifacts.
 - [x] Separate quick/demo parameters from manuscript-scale parameters.
-- [ ] Replace obsolete Circle Bundles API calls.
-- [ ] Extract reusable preprocessing and clustering functions from notebooks.
-- [ ] Run the quick profile in a clean environment.
-- [ ] Run the full paper profile and compare against historical targets.
+- [x] Replace obsolete Circle Bundles API calls in the extended-torus workflow.
+- [x] Extract reusable preprocessing and dense-core selection functions.
+- [x] Run the quick profile from raw Sintel frames in a clean environment.
+- [x] Run the $X(1500,50)$ paper analysis from the verified recovered artifact.
+- [ ] Rebuild the 250,000-row paper artifact from raw Sintel frames.
 - [ ] Generate a figure-to-command manifest.
 - [ ] Decide public data hosting and repository license.
-

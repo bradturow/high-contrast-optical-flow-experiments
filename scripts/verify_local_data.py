@@ -6,7 +6,6 @@ import argparse
 import hashlib
 from pathlib import Path
 
-
 EXPECTED = {
     "hc20": {
         "size": 71_507_665,
@@ -72,4 +71,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

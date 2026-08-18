@@ -1,5 +1,5 @@
 {
-  "status": "historical_reference_not_yet_reproduced",
+  "status": "extended_torus_reproduced_from_preprocessed_data_clustering_pending",
   "sources": [
     "saved outputs in the executed legacy notebooks",
     "the manuscript text"
@@ -8,6 +8,63 @@
     "preprocessed_high_contrast": 250000,
     "x_1500_50": 125000,
     "x_50_60": 150000
+  },
+  "verified_quick_run": {
+    "environment": "macOS arm64, CPython 3.13.9",
+    "circle_bundles_commit": "9dcb901b6895bf13b7a586ab5a0c9fc895ace583",
+    "preprocessed_artifact_sha256": "4b45fdc6df0c7ad7cbe6569547498a05f2b2ac3ddf7061eb6e41adbd0b45c4d1",
+    "independent_artifacts_byte_identical": true,
+    "preprocessed_patch_count": 50000,
+    "x_300_50": 25000,
+    "high_directionality_count": 15877,
+    "low_directionality_count": 5480,
+    "stiefel_whitney_class": 0,
+    "euler_class": 0,
+    "top_persistence_lifetimes": {
+      "H1": [
+        0.689907044172287,
+        0.13945475220680237,
+        0.12495547533035278,
+        0.12329018115997314,
+        0.12001416087150574
+      ],
+      "H2": [
+        0.1176949143409729,
+        0.09556019306182861,
+        0.08610451221466064,
+        0.082935631275177,
+        0.08114093542098999
+      ]
+    }
+  },
+  "verified_paper_extended_torus_run": {
+    "input": "portable artifact exactly converted from recovered HC20 pickle",
+    "raw_sintel_preprocessing_reexecuted": false,
+    "environment": "macOS arm64, CPython 3.13.9",
+    "circle_bundles_commit": "9dcb901b6895bf13b7a586ab5a0c9fc895ace583",
+    "preprocessed_artifact_sha256": "f893aa57ace9aa29ea53a54f8ecf41ba9aa81530fe9aea64edf564d3be1a8b0a",
+    "preprocessed_patch_count": 250000,
+    "x_1500_50": 125000,
+    "high_directionality_count": 79884,
+    "low_directionality_count": 26784,
+    "stiefel_whitney_class": 0,
+    "euler_class": 0,
+    "top_persistence_lifetimes": {
+      "H1": [
+        0.6152938902378082,
+        0.11824211478233337,
+        0.11589398980140686,
+        0.11209392547607422,
+        0.10988843441009521
+      ],
+      "H2": [
+        0.11159753799438477,
+        0.08220916986465454,
+        0.06944930553436279,
+        0.0647246241569519,
+        0.06304016709327698
+      ]
+    }
   },
   "fiberwise_clustering": {
     "initial_global_clusters": 38,
@@ -26,4 +83,3 @@
     "circle_count": 28
   }
 }
-

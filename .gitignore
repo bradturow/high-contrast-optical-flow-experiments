@@ -8,6 +8,9 @@ __pycache__/
 .ipynb_checkpoints/
 .pytest_cache/
 .ruff_cache/
+*.egg-info/
+build/
+dist/
 
 # Local data and generated results are never committed by default.
 data/*
@@ -15,4 +18,3 @@ data/*
 results/*
 !results/reference/
 !results/reference/expected_results.json
-
