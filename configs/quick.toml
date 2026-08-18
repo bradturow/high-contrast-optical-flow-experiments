@@ -1,0 +1,20 @@
+[profile]
+name = "quick"
+description = "Reduced extended-torus experiment matching the tutorial-scale legacy notebook."
+random_seed = 0
+historical_seed = "unrecorded"
+
+[dataset]
+patch_size = 3
+patches_per_frame = 400
+raw_sample_cap = 400000
+high_contrast_fraction = 0.20
+preprocessed_sample_cap = 50000
+density_k_values = [300]
+
+[torus]
+density_k = 300
+density_fraction = 0.50
+expected_patch_count = 25000
+cover_landmarks = 16
+

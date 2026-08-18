@@ -1,0 +1,30 @@
+[profile]
+name = "paper"
+description = "Full manuscript-scale optical-flow experiments."
+random_seed = 0
+historical_seed = "unrecorded"
+
+[dataset]
+patch_size = 3
+patches_per_frame = 4000
+expected_raw_patch_count = 4164000
+high_contrast_fraction = 0.20
+preprocessed_sample_cap = 250000
+density_k_values = [10, 50, 100, 200, 300, 1500]
+
+[torus]
+density_k = 1500
+density_fraction = 0.50
+expected_patch_count = 125000
+cover_landmarks = 16
+
+[filaments]
+density_k = 50
+density_fraction = 0.60
+expected_patch_count = 150000
+cover_landmarks = 16
+dbscan_epsilon = 0.30
+dbscan_min_samples = 5
+graph_weight_threshold = 0.07
+synthetic_patches_per_fragment = 250
+

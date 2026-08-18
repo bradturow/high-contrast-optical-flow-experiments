@@ -1,0 +1,5 @@
+# Bootstrap environment for migration. Generate a tested lock file after the
+# quick and paper profiles have both been validated in a clean environment.
+circle-bundles[notebooks,optical-flow,viz] @ git+https://github.com/bradturow/Circle_Bundles.git@9dcb901b6895bf13b7a586ab5a0c9fc895ace583
+jupyterlab
+

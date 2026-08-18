@@ -1,0 +1,29 @@
+{
+  "status": "historical_reference_not_yet_reproduced",
+  "sources": [
+    "saved outputs in the executed legacy notebooks",
+    "the manuscript text"
+  ],
+  "paper_samples": {
+    "preprocessed_high_contrast": 250000,
+    "x_1500_50": 125000,
+    "x_50_60": 150000
+  },
+  "fiberwise_clustering": {
+    "initial_global_clusters": 38,
+    "initial_unclustered_points": 18,
+    "largest_initial_component_points": 111855,
+    "graph_weight_threshold": 0.07,
+    "deleted_edges": 14,
+    "filtered_components": 45,
+    "filtered_components_with_usable_h1": 27,
+    "final_step_edge_circles": 28
+  },
+  "boundary_dataset": {
+    "empirical_step_edge_patches": 55001,
+    "synthetic_bridge_patches": 500,
+    "augmented_patch_count": 55501,
+    "circle_count": 28
+  }
+}
+
