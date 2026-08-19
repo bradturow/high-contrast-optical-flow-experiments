@@ -4,10 +4,12 @@ Computational experiments supporting the manuscript *An Extended Topological
 Model for High-Contrast Optical Flow*.
 
 > **Migration status:** the recovered sources are preserved unchanged. The
-> modernized extended-torus and fiberwise-clustering notebooks now execute in a
-> clean environment. The manuscript-scale $X(1500,50)$ and $X(50,60)$ analyses
-> both run from the verified recovered preprocessing artifact, and Notebook 02
-> produces a deterministic, pickle-free input for the boundary experiment.
+> modernized Sintel-diagnostics, extended-torus, and fiberwise-clustering
+> notebooks now execute in a clean environment. The diagnostics notebook
+> reproduces the manuscript's directionality comparison, the manuscript-scale
+> $X(1500,50)$ and $X(50,60)$ analyses both run from the verified recovered
+> preprocessing artifact, and Notebook 02 produces a deterministic,
+> pickle-free input for the boundary experiment.
 > Rebuilding the 250,000-row artifact from raw Sintel and modernizing Notebook 03
 > remain to be completed.
 
@@ -40,13 +42,14 @@ the results are declared reproduced.
 
 ## Repository layout
 
-- `notebooks/`: the modernized extended-torus and fiberwise-clustering
-  experiments plus three exact legacy migration sources.
+- `notebooks/`: modernized Sintel diagnostics, extended-torus, and
+  fiberwise-clustering experiments plus three exact legacy migration sources.
 - `legacy_sources/`: supporting figure/data-exploration notebooks, also copied
   exactly and retained only as migration sources.
 - `configs/`: explicit reduced and manuscript-scale parameters.
 - `data/`: local data instructions; data files are ignored by Git.
-- `provenance/`: source hashes and notes about historical executed notebooks.
+- `provenance/`: source hashes, historical notes, and the manuscript
+  figure-to-workflow inventory.
 - `results/reference/`: numerical targets extracted from the manuscript and
   saved notebook outputs.
 - `scripts/`: non-executing integrity checks and, later, reusable experiment
@@ -73,6 +76,26 @@ python -m pip install -r requirements.in
 `requirements-lock.txt` records the clean environment used for the successful
 macOS arm64 / Python 3.13 quick-profile run.
 
+## Run the Sintel diagnostics
+
+Notebook 00 defaults to the paper profile and reads the portable preprocessed
+artifact. It reproduces the four-way directionality comparison and writes a
+machine-readable run record:
+
+```bash
+source .venv/bin/activate
+jupyter nbconvert --to notebook --execute \
+  notebooks/00_sintel_data_diagnostics.ipynb \
+  --output 00_sintel_diagnostics_executed.ipynb \
+  --output-dir results/paper \
+  --ExecutePreprocessor.timeout=1800
+```
+
+Set `OPTICAL_FLOW_PROFILE=quick` for the reduced artifact. If the original raw
+frames are available, set `MPI_SINTEL_ROOT=/path/to/MPI-Sintel-complete` to add
+the optional frame/flow overlay diagnostic. Generated figures and run records
+are written below `results/<profile>/` and are ignored by Git.
+
 ## Run the extended-torus experiment
 
 To construct the quick artifact deterministically from raw Sintel and execute
@@ -94,6 +117,11 @@ jupyter nbconvert --to notebook --execute \
 For the manuscript-scale analysis, set `OPTICAL_FLOW_PROFILE` and
 `OPTICAL_FLOW_PREPROCESSED` to `configs/paper.toml` and a compatible 250,000-row
 portable artifact, respectively.
+
+Notebook 01's paper profile also writes `results/paper/figures/Global_Ripsers.pdf`.
+Its two empirical persistence panels match the submitted Figure 6 diagrams
+exactly. The four noisy synthetic panels use an explicit modern seed and noise
+normalization; the corresponding historical choices were not recorded.
 
 ## Run the fiberwise-clustering experiment
 
@@ -128,6 +156,10 @@ visible.
 - [x] Run the $X(1500,50)$ paper analysis from the verified recovered artifact.
 - [x] Reproduce the $X(50,60)$ fiberwise-clustering structure.
 - [x] Generate a portable, validated Notebook 03 input artifact.
+- [x] Inventory every figure environment used by the submitted manuscript.
+- [x] Reproduce the manuscript directionality comparison from the portable
+  artifact.
+- [x] Reconstruct the six-panel global-persistence comparison in Figure 6.
 - [ ] Rebuild the 250,000-row paper artifact from raw Sintel frames.
 - [ ] Modernize and validate the boundary double-cover experiment.
 - [ ] Generate a figure-to-command manifest.

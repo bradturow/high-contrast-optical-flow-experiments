@@ -1,8 +1,26 @@
 # Core notebooks
 
-`01_extended_torus.ipynb` and `02_fiberwise_clustering.ipynb` are the modernized,
-runnable experiments. They use the current Circle Bundles API, typed
-quick/paper profiles, and portable artifact formats.
+`00_sintel_data_diagnostics.ipynb`, `01_extended_torus.ipynb`, and
+`02_fiberwise_clustering.ipynb` are the modernized, runnable experiments.
+
+Notebook 00 is a cleaned-up continuation of the recovered *Exploring The Sintel
+Dataset* notebook. It loads the portable preprocessed artifact, supports quick
+and paper profiles, reproduces the manuscript's four-way directionality
+comparison, and writes a machine-readable run record. When `MPI_SINTEL_ROOT` is
+set, it also renders an optional raw-frame optical-flow overlay. The
+weak-directionality samples, top-one-percent projections, and original
+scene/frame choices still need to be identified. Exploratory contrast plots are
+left in the preserved legacy source because the manuscript does not report
+them.
+
+Notebook 01 keeps the tutorial-style Circle Bundles analysis visible in the
+notebook, with a short quick/paper parameter block and portable artifact
+loading. Its paper profile reconstructs the six-panel direct-persistence
+comparison in Figure 6. The two empirical panels match the submitted diagrams
+exactly; the synthetic panels use a documented deterministic seed and the
+current Circle Bundles noise-normalization convention because those historical
+details were not recorded. Notebook 02 uses the typed experiment helpers for
+the longer clustering workflow.
 
 Notebook 02 defaults to the paper profile. It reproduces the saved clustering
 structure and writes `data/K_50_60_Circles.v1.npz` for Notebook 03. Its quick
