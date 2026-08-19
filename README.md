@@ -4,11 +4,12 @@ Computational experiments supporting the manuscript *An Extended Topological
 Model for High-Contrast Optical Flow*.
 
 > **Migration status:** the recovered sources are preserved unchanged. The
-> modernized extended-torus notebook and quick profile now execute successfully
-> from raw Sintel flow frames in a clean environment. The manuscript-scale
-> $X(1500,50)$ analysis also executes from the verified recovered preprocessing
-> artifact. Rebuilding that 250,000-row artifact from raw Sintel, plus the
-> clustering/boundary notebooks, remains to be validated.
+> modernized extended-torus and fiberwise-clustering notebooks now execute in a
+> clean environment. The manuscript-scale $X(1500,50)$ and $X(50,60)$ analyses
+> both run from the verified recovered preprocessing artifact, and Notebook 02
+> produces a deterministic, pickle-free input for the boundary experiment.
+> Rebuilding the 250,000-row artifact from raw Sintel and modernizing Notebook 03
+> remain to be completed.
 
 ## Experiment pipeline
 
@@ -39,8 +40,8 @@ the results are declared reproduced.
 
 ## Repository layout
 
-- `notebooks/`: the modernized extended-torus experiment plus three exact legacy
-  migration sources.
+- `notebooks/`: the modernized extended-torus and fiberwise-clustering
+  experiments plus three exact legacy migration sources.
 - `legacy_sources/`: supporting figure/data-exploration notebooks, also copied
   exactly and retained only as migration sources.
 - `configs/`: explicit reduced and manuscript-scale parameters.
@@ -94,6 +95,28 @@ For the manuscript-scale analysis, set `OPTICAL_FLOW_PROFILE` and
 `OPTICAL_FLOW_PREPROCESSED` to `configs/paper.toml` and a compatible 250,000-row
 portable artifact, respectively.
 
+## Run the fiberwise-clustering experiment
+
+Notebook 02 defaults to the paper profile. The equivalent non-interactive
+command is:
+
+```bash
+source .venv/bin/activate
+python scripts/run_fiberwise_clustering.py \
+  --config configs/paper.toml \
+  --preprocessed data/HC20_Flow_Patches.v1.npz \
+  --output data/K_50_60_Circles.v1.npz \
+  --summary results/paper/fiberwise_clustering_metrics.json
+```
+
+The locked environment reproduces all major saved clustering results: 38
+initial components, 18 initially unclustered patches, 14 removed graph edges,
+45 filtered components, 27 components with usable $H_1$, and 28 final filament
+circles. It assigns 55,012 empirical patches to those circles, 11 more than the
+55,001 recorded by the historical Python 3.10 execution. Both values are kept
+in the reference results so this small dependency-sensitive discrepancy is
+visible.
+
 ## Reproducibility status
 
 - [x] Identify and preserve the canonical legacy notebook sources.
@@ -103,6 +126,9 @@ portable artifact, respectively.
 - [x] Extract reusable preprocessing and dense-core selection functions.
 - [x] Run the quick profile from raw Sintel frames in a clean environment.
 - [x] Run the $X(1500,50)$ paper analysis from the verified recovered artifact.
+- [x] Reproduce the $X(50,60)$ fiberwise-clustering structure.
+- [x] Generate a portable, validated Notebook 03 input artifact.
 - [ ] Rebuild the 250,000-row paper artifact from raw Sintel frames.
+- [ ] Modernize and validate the boundary double-cover experiment.
 - [ ] Generate a figure-to-command manifest.
 - [ ] Decide public data hosting and repository license.

@@ -34,6 +34,19 @@ class TorusConfig:
 
 
 @dataclass(frozen=True)
+class FilamentConfig:
+    density_k: int
+    density_fraction: float
+    expected_patch_count: int
+    cover_landmarks: int
+    cover_overlap: float
+    dbscan_epsilon: float
+    dbscan_min_samples: int
+    graph_weight_threshold: float
+    synthetic_patches_per_fragment: int
+
+
+@dataclass(frozen=True)
 class ExperimentConfig:
     name: str
     description: str
@@ -41,6 +54,7 @@ class ExperimentConfig:
     historical_seed: str
     dataset: DatasetConfig
     torus: TorusConfig
+    filaments: FilamentConfig
     source_path: Path
 
 
@@ -68,6 +82,7 @@ def load_experiment_config(path: str | Path) -> ExperimentConfig:
     profile = raw["profile"]
     dataset_raw = raw["dataset"]
     torus_raw = raw["torus"]
+    filaments_raw = raw["filaments"]
 
     density_k_values = tuple(sorted({int(k) for k in dataset_raw["density_k_values"]}))
     if not density_k_values or density_k_values[0] <= 0:
@@ -97,6 +112,30 @@ def load_experiment_config(path: str | Path) -> ExperimentConfig:
     if torus.cover_overlap <= 1:
         raise ValueError("cover_overlap must be greater than 1 so adjacent cover sets overlap.")
 
+    filaments = FilamentConfig(
+        density_k=_positive_int(filaments_raw, "density_k"),
+        density_fraction=_fraction(filaments_raw, "density_fraction"),
+        expected_patch_count=_positive_int(filaments_raw, "expected_patch_count"),
+        cover_landmarks=_positive_int(filaments_raw, "cover_landmarks"),
+        cover_overlap=float(filaments_raw["cover_overlap"]),
+        dbscan_epsilon=float(filaments_raw["dbscan_epsilon"]),
+        dbscan_min_samples=_positive_int(filaments_raw, "dbscan_min_samples"),
+        graph_weight_threshold=float(filaments_raw["graph_weight_threshold"]),
+        synthetic_patches_per_fragment=_positive_int(
+            filaments_raw, "synthetic_patches_per_fragment"
+        ),
+    )
+    if filaments.density_k not in dataset.density_k_values:
+        raise ValueError(
+            f"filaments density_k={filaments.density_k} is absent from density_k_values."
+        )
+    if filaments.cover_overlap <= 1:
+        raise ValueError("filaments cover_overlap must be greater than 1.")
+    if filaments.dbscan_epsilon <= 0:
+        raise ValueError("dbscan_epsilon must be positive.")
+    if not 0 <= filaments.graph_weight_threshold <= 1:
+        raise ValueError("graph_weight_threshold must lie in [0, 1].")
+
     return ExperimentConfig(
         name=str(profile["name"]),
         description=str(profile["description"]),
@@ -104,5 +143,6 @@ def load_experiment_config(path: str | Path) -> ExperimentConfig:
         historical_seed=str(profile["historical_seed"]),
         dataset=dataset,
         torus=torus,
+        filaments=filaments,
         source_path=source_path,
     )

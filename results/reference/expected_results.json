@@ -1,5 +1,5 @@
 {
-  "status": "extended_torus_reproduced_from_preprocessed_data_clustering_pending",
+  "status": "extended_torus_and_fiberwise_clustering_reproduced_boundary_pending",
   "sources": [
     "saved outputs in the executed legacy notebooks",
     "the manuscript text"
@@ -74,12 +74,38 @@
     "deleted_edges": 14,
     "filtered_components": 45,
     "filtered_components_with_usable_h1": 27,
-    "final_step_edge_circles": 28
+    "final_step_edge_circles": 28,
+    "verified_environment": "macOS arm64, CPython 3.13.9",
+    "verified_scikit_learn_version": "1.9.0",
+    "verified_networkx_version": "3.6.1",
+    "circle_bundles_commit": "9dcb901b6895bf13b7a586ab5a0c9fc895ace583"
+  },
+  "verified_quick_fiberwise_run": {
+    "x_300_60": 30000,
+    "initial_global_clusters": 2,
+    "initial_unclustered_points": 157,
+    "largest_initial_component_points": 29803,
+    "deleted_edges": 9,
+    "filtered_components": 10,
+    "filtered_components_with_usable_h1": 1,
+    "boundary_assembly_attempted": false
   },
   "boundary_dataset": {
-    "empirical_step_edge_patches": 55001,
-    "synthetic_bridge_patches": 500,
-    "augmented_patch_count": 55501,
-    "circle_count": 28
+    "historical_saved_output": {
+      "empirical_step_edge_patches": 55001,
+      "synthetic_bridge_patches": 500,
+      "augmented_patch_count": 55501,
+      "circle_count": 28
+    },
+    "verified_current_run": {
+      "empirical_step_edge_patches": 55012,
+      "synthetic_bridge_patches": 500,
+      "augmented_patch_count": 55512,
+      "circle_count": 28,
+      "artifact_size_bytes": 7526862,
+      "artifact_sha256": "990c7ef1e3274981509ed28ebf0b6359477a13603586054aa68178ca95e31f02",
+      "empirical_count_delta_from_historical": 11
+    },
+    "discrepancy_note": "All recorded graph and homology counts agree. The final empirical membership differs by 11 patches from the old Python 3.10 execution, most likely because exact DBSCAN/filter assignments are dependency-sensitive."
   }
 }

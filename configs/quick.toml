@@ -18,3 +18,14 @@ density_fraction = 0.50
 expected_patch_count = 25000
 cover_landmarks = 16
 cover_overlap = 1.99
+
+[filaments]
+density_k = 300
+density_fraction = 0.60
+expected_patch_count = 30000
+cover_landmarks = 16
+cover_overlap = 1.99
+dbscan_epsilon = 0.30
+dbscan_min_samples = 5
+graph_weight_threshold = 0.07
+synthetic_patches_per_fragment = 25
