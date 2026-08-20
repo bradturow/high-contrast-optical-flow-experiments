@@ -4,14 +4,14 @@ Computational experiments supporting the manuscript *An Extended Topological
 Model for High-Contrast Optical Flow*.
 
 > **Migration status:** the recovered sources are preserved unchanged. The
-> modernized Sintel-diagnostics, extended-torus, and fiberwise-clustering
-> notebooks now execute in a clean environment. The diagnostics notebook
-> reproduces the manuscript's directionality comparison, the manuscript-scale
-> $X(1500,50)$ and $X(50,60)$ analyses both run from the verified recovered
-> preprocessing artifact, and Notebook 02 produces a deterministic,
-> pickle-free input for the boundary experiment.
-> Rebuilding the 250,000-row artifact from raw Sintel and modernizing Notebook 03
-> remain to be completed.
+> modernized Sintel-diagnostics, extended-torus, fiberwise-clustering, and
+> boundary-double-cover notebooks now execute in a clean environment. The
+> diagnostics notebook reproduces the manuscript's directionality comparison,
+> the manuscript-scale $X(1500,50)$ and $X(50,60)$ analyses both run from the
+> verified recovered preprocessing artifact, Notebook 02 produces a deterministic pickle-free
+> boundary artifact, and Notebook 03 recovers its trivial lifted circle bundle
+> and Figure 30. Rebuilding the 250,000-row artifact from raw Sintel remains to
+> be completed.
 
 ## Experiment pipeline
 
@@ -29,21 +29,23 @@ preprocess high-contrast 3 x 3 flow patches (250,000 patches)
                     boundary double-cover experiment
 ```
 
-The repository will support two profiles:
+The diagnostics and extended-torus workflows support two profiles:
 
 - `quick`: a reduced experiment suitable for tutorials and continuous
   integration.
 - `paper`: the full parameters reported in the manuscript.
 
-The profiles are documented in `configs/quick.toml` and
-`configs/paper.toml`. The historical notebooks did not consistently record
-random seeds, so the canonical seed for future runs must be validated before
-the results are declared reproduced.
+The profiles are documented in `configs/quick.toml` and `configs/paper.toml`.
+The fiberwise-clustering and boundary-double-cover notebooks are deliberately
+publication-only because their later stages identify components specific to
+the paper dataset. The historical notebooks did not consistently record random
+seeds, so the canonical seed for future runs must be validated before the
+results are declared reproduced.
 
 ## Repository layout
 
-- `notebooks/`: modernized Sintel diagnostics, extended-torus, and
-  fiberwise-clustering experiments plus three exact legacy migration sources.
+- `notebooks/`: four modernized paper workflows plus three exact legacy
+  migration sources.
 - `legacy_sources/`: supporting figure/data-exploration notebooks, also copied
   exactly and retained only as migration sources.
 - `configs/`: explicit reduced and manuscript-scale parameters.
@@ -151,6 +153,26 @@ divided by the mean endpoint cardinality for `rel_card2`. The current manuscript
 formula displays a maximum denominator; that textual formula should be
 reconciled before publication.
 
+## Run the boundary double-cover experiment
+
+Notebook 03 is publication-only and consumes the portable artifact written by
+Notebook 02:
+
+```bash
+source .venv/bin/activate
+jupyter nbconvert --to notebook --execute \
+  notebooks/03_boundary_double_cover.ipynb \
+  --output 03_boundary_double_cover_executed.ipynb \
+  --output-dir results/paper \
+  --ExecutePreprocessor.timeout=1800
+```
+
+The notebook constructs a 16-set lifted cover directly with the current
+$S^1$ angular metric, confirms that the boundary circle bundle is orientable
+with zero Euler class, computes a global toroidal coordinate for all 55,501
+patches, and writes Figure 30 to
+`results/paper/figures/boundary_torus.pdf`.
+
 ## Reproducibility status
 
 - [x] Identify and preserve the canonical legacy notebook sources.
@@ -168,6 +190,6 @@ reconciled before publication.
 - [x] Reconstruct the six-panel global-persistence comparison in Figure 6.
 - [x] Reproduce the Notebook 02 manuscript outputs for Figures 17--26.
 - [ ] Rebuild the 250,000-row paper artifact from raw Sintel frames.
-- [ ] Modernize and validate the boundary double-cover experiment.
+- [x] Modernize and validate the boundary double-cover experiment and Figure 30.
 - [ ] Generate a figure-to-command manifest.
 - [ ] Decide public data hosting and repository license.

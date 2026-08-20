@@ -1,5 +1,5 @@
 {
-  "status": "extended_torus_and_fiberwise_clustering_reproduced",
+  "status": "extended_torus_fiberwise_clustering_and_boundary_reproduced",
   "sources": [
     "saved outputs in the executed legacy notebooks",
     "the manuscript text"
@@ -99,5 +99,40 @@
       "empirical_count_delta_from_historical": 0
     },
     "reproduction_note": "The prior 11-patch discrepancy came from rounding the current angular cover overlap to 1.5. Reconstructing the executed legacy doubled-angle Euclidean cover (overlap 1.49) gives an equivalent angular overlap of 1.4929458295451654 and reproduces all 55,001 empirical memberships exactly."
+  },
+  "boundary_double_cover": {
+    "boundary_patch_count": 55501,
+    "circle_count": 28,
+    "lifted_cover_sets": 16,
+    "cover_metric": "S1AngleMetric",
+    "angular_overlap_factor": 1.5,
+    "cover_radius": 0.2945243112740431,
+    "legacy_reference_chord_overlap": 1.49,
+    "legacy_cover_membership_mismatches": 359,
+    "lifted_cover_cardinalities": [
+      7337,
+      4116,
+      3382,
+      3103,
+      6517,
+      3129,
+      4155,
+      8014,
+      6938,
+      4093,
+      3263,
+      2893,
+      5501,
+      3302,
+      4415,
+      8488
+    ],
+    "maximum_geodesic_trivialization_error": 0.26283635740822986,
+    "mean_geodesic_trivialization_error": 0.03654977696203869,
+    "surjectivity_defect": 0.0,
+    "cocycle_defect": 0.0,
+    "stiefel_whitney_class": 0,
+    "euler_class": 0,
+    "global_coordinate_count": 55501
   }
 }

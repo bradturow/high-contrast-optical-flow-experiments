@@ -19,12 +19,12 @@ concatenation with a missing separator. The modern fiberwise-clustering pipeline
 now regenerates it as `K_50_60_Circles.v1.npz`, which loads with
 `allow_pickle=False` and records its construction metadata.
 
-The verified local artifact was 7,526,862 bytes with SHA-256
-`990c7ef1e3274981509ed28ebf0b6359477a13603586054aa68178ca95e31f02`.
-It contains 55,012 empirical patches, 500 deterministic synthetic bridge
-patches, and a mutually exclusive `(28, 55512)` circle-membership matrix. The
-historical notebook recorded 55,001 empirical patches; see the reference
-results for this 11-patch dependency-sensitive difference.
+The verified local artifact is 7,525,439 bytes with SHA-256
+`f083ee0159007f4ee7091d17cf9d690292a13f1550969254168358f0ae88ab60`.
+It contains exactly 55,001 empirical patches, 500 deterministic synthetic bridge
+patches, and a mutually exclusive `(28, 55501)` circle-membership matrix. The
+earlier 11-patch discrepancy was eliminated by reconstructing the executed
+legacy cover rather than rounding its equivalent angular overlap.
 
 The migration code can convert the trusted HC20 pickle to a compressed NPZ
 artifact whose arrays load with `allow_pickle=False`:

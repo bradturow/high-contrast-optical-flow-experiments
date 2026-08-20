@@ -56,7 +56,7 @@ mathematical procedure.
 | 27 | `fig:HC1_Sample_Projections` | `HC_Fiber_Projections.png` | Data | Sintel diagnostics | **Legacy source.** Rebuild the top-one-percent contrast sample and its fiber projections from the recovered preprocessing artifact. |
 | 28 | `Labeled_Frames` | `Labeled_FrameD.png`, `Labeled_FrameB.png`, `Labeled_FrameE.png` | Contextual data | Sintel diagnostics | **Legacy source.** The frame-labeling functions and contrast thresholds are present; make the frame choices explicit and deterministic. |
 | 29 | `Optical_Flow_Annulus` | `Binary_Step_Edge_Opt_Flow_AnnulusB.pdf` | Conceptual model | Model figures | **Legacy source.** The recovered step-edge checkpoint contains the optical-flow annulus export. |
-| 30 | `Boundary_Torus` | `boundary_torus.pdf` | Data / bundle result | Notebook 03 | **Legacy source.** The input artifact is now portable, but Notebook 03 still needs current-API modernization and end-to-end validation. |
+| 30 | `Boundary_Torus` | `boundary_torus.pdf` | Data / bundle result | Notebook 03 | **Reproduced.** Notebook 03 constructs the lifted cover with the current $S^1$ angular metric, confirms $w_1=0$ and Euler class zero, computes global toroidal coordinates, and regenerates the stable paper PDF. |
 | 31 | `All_Binary_Range_Patches` | `All_Binary_Step_Range_Patches.pdf` | Appendix model catalog | Model figures | **Legacy source.** The step-edge notebook deterministically constructs all 56 patches. |
 
 ## Recommended public workflows
@@ -73,6 +73,7 @@ follows:
 
 Notebook 00 now completes figure 10 and supplies the reusable raw-frame overlay
 needed to identify figure 1. Notebook 02 reproduces figures 17--26 and records
-every stable output filename in its run record. The next useful pass is to
-recover the exact scene/frame selections for figures 1 and 28, or to continue
-with the missing Notebook 01 panels 8 and 14.
+every stable output filename in its run record. Notebook 03 reproduces figure
+30 from the portable boundary artifact. The next useful pass is to recover the
+exact scene/frame selections for figures 1 and 28, or to continue with the
+missing Notebook 01 panels 8 and 14.

@@ -31,8 +31,10 @@ Known migration issues include:
 The modern Notebook 02 resolves the component-number dependency by locating the
 two visually identified incomplete-circle pairs using their recorded
 cardinalities. It uses the repository's canonical seed for the synthetic bridge
-patches and writes a portable NPZ artifact. In the locked Python 3.13
-environment, all major graph and persistence counts match the saved execution,
-but the final empirical boundary sample contains 55,012 rather than 55,001
-patches. The 11-patch difference is retained as a recorded dependency-sensitive
-discrepancy rather than being manually removed.
+patches and writes a portable NPZ artifact. Reconstructing the old
+doubled-angle Euclidean cover exactly eliminates the earlier 11-patch
+discrepancy and recovers all 55,001 historical empirical memberships. Modern
+Notebook 03 then constructs its 16-set lifted cover directly with the current
+$S^1$ angular metric. It records the difference from the legacy chord-distance
+parameterization, confirms the boundary bundle is orientable with zero Euler
+class, and regenerates Figure 30.
