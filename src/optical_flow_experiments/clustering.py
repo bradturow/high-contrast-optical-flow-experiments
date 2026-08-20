@@ -210,6 +210,7 @@ def assemble_paper_boundary_artifact(
     synthetic_patches_per_fragment: int = 250,
     composite_size_pairs: tuple[tuple[int, int], ...] = HISTORICAL_COMPOSITE_SIZE_PAIRS,
     composite_pattern_indices: tuple[int, ...] = HISTORICAL_COMPOSITE_PATTERN_INDICES,
+    cover_metadata: dict | None = None,
 ) -> BoundaryArtifact:
     """Apply the manuscript's visual component identifications and build Notebook 03 input.
 
@@ -302,6 +303,8 @@ def assemble_paper_boundary_artifact(
         "composite_pattern_indices": [int(index) for index in composite_pattern_indices],
         "noise_component_ids": [int(index) for index in noise_ids],
     }
+    if cover_metadata is not None:
+        metadata["cover"] = dict(cover_metadata)
     return BoundaryArtifact(
         patches=np.asarray(boundary_patches, dtype=np.float64),
         memberships=np.asarray(boundary_memberships, dtype=bool),

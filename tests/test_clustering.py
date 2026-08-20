@@ -35,6 +35,7 @@ def test_assemble_boundary_uses_cardinalities_not_component_numbers():
         synthetic_patches_per_fragment=2,
         composite_size_pairs=((2, 3), (4, 5)),
         composite_pattern_indices=(18, 16),
+        cover_metadata={"metric": "RP1 angular distance", "angular_overlap": 1.5},
     )
     validate_boundary_artifact(artifact)
     assert artifact.patches.shape == (44, 18)
@@ -43,6 +44,7 @@ def test_assemble_boundary_uses_cardinalities_not_component_numbers():
     assert artifact.metadata["synthetic_patch_count"] == 4
     assert artifact.metadata["torus_component_id"] == 0
     assert artifact.metadata["composite_component_ids"] == [[27, 28], [29, 30]]
+    assert artifact.metadata["cover"]["angular_overlap"] == 1.5
     np.testing.assert_array_equal(artifact.source_indices[-4:], -1)
 
 

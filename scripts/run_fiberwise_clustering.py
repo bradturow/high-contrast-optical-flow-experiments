@@ -64,6 +64,14 @@ def main() -> int:
         h1.circular,
         random_seed=config.random_seed,
         synthetic_patches_per_fragment=filament.synthetic_patches_per_fragment,
+        cover_metadata={
+            "metric": "RP1 angular distance",
+            "landmarks": filament.cover_landmarks,
+            "angular_radius": (
+                filament.cover_overlap * np.pi / (2 * filament.cover_landmarks)
+            ),
+            "angular_overlap": filament.cover_overlap,
+        },
     )
     output = save_boundary_npz(artifact, args.output)
     sha256 = hashlib.sha256(output.read_bytes()).hexdigest()

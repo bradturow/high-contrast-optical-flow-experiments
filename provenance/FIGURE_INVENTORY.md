@@ -43,16 +43,16 @@ mathematical procedure.
 | 14 | `Nerve_With_Cochains` | `Real_Opt_Flow_Triv_Correlations.pdf`, `Real_Oft_Nerve.pdf` | Data / bundle result | Notebook 01 | **Partial.** Notebook 01 computes the local trivializations and characteristic classes, but the exact correlation and labeled-nerve panels are not yet exported. |
 | 15 | `Recovered_Patch_Diagrams` | `opt_flow_torus.pdf` | Data / bundle result | Notebook 01 | **Reproduced.** The publication profile recovers the high-directionality lattice and expected counts. Add stable selection and the paper export name. |
 | 16 | `low_directionality_recovered_patches` | `opt_flow_torus_low.pdf` | Data / bundle result | Notebook 01 | **Reproduced.** The publication profile recovers the low-directionality lattice and expected counts. Add stable selection and the paper export name. |
-| 17 | `Combined_Sample_Figure` | `Sample_Projections.pdf`, `Sample_Projections_rips.pdf` | Data | Notebook 02 | **Partial.** Notebook 02 produces fiberwise PCA summaries; the matching per-fiber persistence panel and paper composite remain. |
-| 18 | `Summary_Part1` | `Sample_Clustered_Fibers_summary.pdf` | Data / clustering | Notebook 02 | **Partial.** The modern workflow reproduces the clustering counts and summary data; match the three-panel paper presentation. |
-| 19 | `Sample_Clustered_Fibers` | `Sample_Clustered_Fibers.pdf` | Data / clustering | Notebook 02 | **Legacy source.** The exact fiberwise cluster visualization exists in the recovered clustering notebook; port its plotting cell. |
-| 20 | `Binary_Patch_Sample` | `Binary_Range_Patch_Sample.pdf`, `Binary_Flow_Patch_SampleA.pdf`, `Binary_Flow_Patch_SampleB.pdf` | Model/data comparison | Model figures / Notebook 02 | **Legacy source.** The recovered step-edge checkpoint contains the three explicit export cells. |
-| 21 | `Double_Cover_Patches` | `G_component_vis.pdf` | Data / graph | Notebook 02 | **Legacy source.** The recovered full clustering notebook contains the component-graph visualization. Port it using stable component identification rather than old numeric IDs. |
-| 22 | `Sample_CCs` | `Sample_ccs_w_Corrs.pdf` | Data / circular coordinates | Notebook 02 | **Partial.** The modern workflow identifies the circular components, but the representative-patch circular-coordinate plot remains to be ported. |
-| 23 | `Cluster_Persistence` | `Cluster_Persistence.pdf` | Data / persistence | Notebook 02 | **Reproduced in substance.** Notebook 02 recomputes component $H_1$ lifetimes and classification; reproduce the paper styling/export. |
-| 24 | `Summary_Part2` | `Point_Count.pdf`, `Cluster_Count.pdf`, `Optical_Flow_Paper_DiagramsLargest_Cluster_Graph_Vis2.pdf` | Data / graph summary | Notebook 02 | **Partial.** Counts are reproduced and the legacy graph source is identified. Rebuild the three-panel composite from the modern component memberships. |
-| 25 | `Missing_Circles` | `composite_circles_ripser.pdf`, `Missing_Circles_cc.pdf` | Data / persistence | Notebook 02 | **Partial.** The modern workflow deterministically identifies and joins the two incomplete-circle pairs; the explanatory persistence and coordinate panels remain. |
-| 26 | `fig:Quadratic_Patches` | `Quadratic_Patches.pdf` | Model/data interpretation | Model figures / Notebook 02 | **Legacy source.** Confirm the selected atypical component and reconstruct its quadratic-patch comparison. |
+| 17 | `Combined_Sample_Figure` | `Sample_Projections.pdf`, `Sample_Projections_rips.pdf` | Data | Notebook 02 | **Reproduced.** Notebook 02 regenerates the three local PCA projections and matching per-fiber persistence diagrams. |
+| 18 | `Summary_Part1` | `Sample_Clustered_Fibers_summary.pdf` | Data / clustering | Notebook 02 | **Reproduced.** The three-panel clustering summary and all saved counts match the executed legacy run. |
+| 19 | `Sample_Clustered_Fibers` | `Sample_Clustered_Fibers.pdf` | Data / clustering | Notebook 02 | **Reproduced.** The three selected fibers are displayed with their DBSCAN labels under the stable paper filename. |
+| 20 | `Binary_Patch_Sample` | `Binary_Range_Patch_Sample.pdf`, `Binary_Flow_Patch_SampleA.pdf`, `Binary_Flow_Patch_SampleB.pdf` | Model/data comparison | Notebook 02 | **Reproduced.** The ten recorded binary pattern indices and the fixed $\pi/6$ flow direction regenerate all three panels. |
+| 21 | `Double_Cover_Patches` | `G_component_vis.pdf` | Data / graph | Notebook 02 | **Reproduced.** Notebook 02 rebuilds the representative-patch diagram for the recorded double-cover component. |
+| 22 | `Sample_CCs` | `Sample_ccs_w_Corrs.pdf` | Data / circular coordinates | Notebook 02 | **Reproduced.** Components 9, 11 and 15 are coordinatized and compared with predominant direction. Circular-coordinate gauge choices can rotate or reflect the displayed parametrizations. |
+| 23 | `Cluster_Persistence` | `Cluster_Persistence.pdf` | Data / persistence | Notebook 02 | **Reproduced.** Notebook 02 reconstructs the graph-weight filtration and stable publication export. |
+| 24 | `Summary_Part2` | `Point_Count.pdf`, `Cluster_Count.pdf`, `Optical_Flow_Paper_DiagramsLargest_Cluster_Graph_Vis2.pdf` | Data / graph summary | Notebook 02 | **Reproduced.** The filtered cluster counts, point counts and colored $G_0$ graph are rebuilt from the modern component memberships. |
+| 25 | `Missing_Circles` | `composite_circles_ripser.pdf`, `Missing_Circles_cc.pdf` | Data / persistence | Notebook 02 | **Reproduced.** The two component pairs are found by their recorded cardinalities, their persistence is recomputed, and deterministic bridge samples support the circular-coordinate panels. |
+| 26 | `fig:Quadratic_Patches` | `Quadratic_Patches.pdf` | Model/data interpretation | Notebook 02 | **Reproduced.** One deterministic representative from each residual component recreates the outlier/quadratic-patch panel. |
 | 27 | `fig:HC1_Sample_Projections` | `HC_Fiber_Projections.png` | Data | Sintel diagnostics | **Legacy source.** Rebuild the top-one-percent contrast sample and its fiber projections from the recovered preprocessing artifact. |
 | 28 | `Labeled_Frames` | `Labeled_FrameD.png`, `Labeled_FrameB.png`, `Labeled_FrameE.png` | Contextual data | Sintel diagnostics | **Legacy source.** The frame-labeling functions and contrast thresholds are present; make the frame choices explicit and deterministic. |
 | 29 | `Optical_Flow_Annulus` | `Binary_Step_Edge_Opt_Flow_AnnulusB.pdf` | Conceptual model | Model figures | **Legacy source.** The recovered step-edge checkpoint contains the optical-flow annulus export. |
@@ -72,7 +72,7 @@ follows:
 5. **Deterministic model figures:** figures 2--5, 11--13, 20, 26, 29 and 31.
 
 Notebook 00 now completes figure 10 and supplies the reusable raw-frame overlay
-needed to identify figure 1. The next useful pass is to recover the exact
-scene/frame selections for figures 1 and 28, or to continue with the missing
-Notebook 01 panels 6, 8 and 14. Every finished figure should receive a stable
-output filename and a corresponding entry in its run record.
+needed to identify figure 1. Notebook 02 reproduces figures 17--26 and records
+every stable output filename in its run record. The next useful pass is to
+recover the exact scene/frame selections for figures 1 and 28, or to continue
+with the missing Notebook 01 panels 8 and 14.

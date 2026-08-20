@@ -125,8 +125,9 @@ normalization; the corresponding historical choices were not recorded.
 
 ## Run the fiberwise-clustering experiment
 
-Notebook 02 defaults to the paper profile. The equivalent non-interactive
-command is:
+Notebook 02 is publication-only because several stages identify components
+specific to the complete paper dataset. The equivalent non-interactive command
+is:
 
 ```bash
 source .venv/bin/activate
@@ -137,13 +138,18 @@ python scripts/run_fiberwise_clustering.py \
   --summary results/paper/fiberwise_clustering_metrics.json
 ```
 
-The locked environment reproduces all major saved clustering results: 38
+The locked environment reproduces the complete saved clustering structure: 38
 initial components, 18 initially unclustered patches, 14 removed graph edges,
 45 filtered components, 27 components with usable $H_1$, and 28 final filament
-circles. It assigns 55,012 empirical patches to those circles, 11 more than the
-55,001 recorded by the historical Python 3.10 execution. Both values are kept
-in the reference results so this small dependency-sensitive discrepancy is
-visible.
+circles. Reconstructing the legacy doubled-angle cover exactly also recovers the
+historical 55,001 empirical circle patches and the 55,501-patch augmented
+boundary artifact. Notebook 02 regenerates the manuscript outputs for Figures
+17--26 under stable filenames in `results/paper/figures/`.
+
+For provenance, the executed clustering code uses intersection cardinality
+divided by the mean endpoint cardinality for `rel_card2`. The current manuscript
+formula displays a maximum denominator; that textual formula should be
+reconciled before publication.
 
 ## Reproducibility status
 
@@ -160,6 +166,7 @@ visible.
 - [x] Reproduce the manuscript directionality comparison from the portable
   artifact.
 - [x] Reconstruct the six-panel global-persistence comparison in Figure 6.
+- [x] Reproduce the Notebook 02 manuscript outputs for Figures 17--26.
 - [ ] Rebuild the 250,000-row paper artifact from raw Sintel frames.
 - [ ] Modernize and validate the boundary double-cover experiment.
 - [ ] Generate a figure-to-command manifest.

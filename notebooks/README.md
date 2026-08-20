@@ -19,13 +19,14 @@ loading. Its paper profile reconstructs the six-panel direct-persistence
 comparison in Figure 6. The two empirical panels match the submitted diagrams
 exactly; the synthetic panels use a documented deterministic seed and the
 current Circle Bundles noise-normalization convention because those historical
-details were not recorded. Notebook 02 uses the typed experiment helpers for
-the longer clustering workflow.
+details were not recorded.
 
-Notebook 02 defaults to the paper profile. It reproduces the saved clustering
-structure and writes `data/K_50_60_Circles.v1.npz` for Notebook 03. Its quick
-profile stops after clustering diagnostics because the final two component
-pairings were manuscript-specific visual identifications.
+Notebook 02 keeps the recovered fiberwise-clustering analysis visible through
+direct `circle_bundles` calls. It is deliberately publication-only: it
+reconstructs the exact legacy cover, reproduces Figures 17--26, records the
+manuscript-specific component pairings by stable cardinality, and writes
+`data/K_50_60_Circles.v1.npz` for Notebook 03. A reduced mode would not support
+the later dataset-specific component identifications.
 
 The three numbered `real_optical_flow_*` notebooks remain exact copies of the
 cleanest sources found in the legacy archive. They intentionally retain their

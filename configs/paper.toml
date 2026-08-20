@@ -24,7 +24,9 @@ density_k = 50
 density_fraction = 0.60
 expected_patch_count = 150000
 cover_landmarks = 16
-cover_overlap = 1.5
+# Angular-metric equivalent of the executed legacy doubled-angle cover
+# (Euclidean chord-distance overlap 1.49) for the recovered paper artifact.
+cover_overlap = 1.4929458295451654
 dbscan_epsilon = 0.30
 dbscan_min_samples = 5
 graph_weight_threshold = 0.07

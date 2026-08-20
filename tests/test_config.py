@@ -16,10 +16,11 @@ ROOT = Path(__file__).resolve().parents[1]
         "overlap",
         "filament_density_k",
         "filament_count",
+        "filament_overlap",
     ),
     [
-        ("quick", 400, 300, 25_000, 1.99, 300, 30_000),
-        ("paper", 4_000, 1_500, 125_000, 1.5, 50, 150_000),
+        ("quick", 400, 300, 25_000, 1.99, 300, 30_000, 1.99),
+        ("paper", 4_000, 1_500, 125_000, 1.5, 50, 150_000, 1.4929458295451654),
     ],
 )
 def test_profiles(
@@ -30,6 +31,7 @@ def test_profiles(
     overlap,
     filament_density_k,
     filament_count,
+    filament_overlap,
 ):
     config = load_experiment_config(ROOT / "configs" / f"{name}.toml")
     assert config.name == name
@@ -39,3 +41,4 @@ def test_profiles(
     assert config.torus.cover_overlap == overlap
     assert config.filaments.density_k == filament_density_k
     assert config.filaments.expected_patch_count == filament_count
+    assert config.filaments.cover_overlap == filament_overlap
