@@ -42,6 +42,22 @@ the paper dataset. The historical notebooks did not consistently record random
 seeds, so the canonical seed for future runs must be validated before the
 results are declared reproduced.
 
+## Reproduction scope
+
+The public workflows are intended to reproduce the data-dependent computations
+and scientific results in the manuscript. They are not intended to recreate
+every explanatory illustration pixel for pixel. Figures 2--5, 11--13, 29 and
+31 are deterministic conceptual/model artwork: their canonical PDFs remain in
+the submitted manuscript source archive, while their
+recovered source notebooks are retained here for provenance. A separate public
+execution notebook would not add scientific validation. Figure 8 is likewise
+preserved in the manuscript archive as contextual artwork for the separate
+Adams-style cover.
+
+The figure inventory in `provenance/FIGURE_INVENTORY.md` records this distinction
+explicitly so that a preserved conceptual figure is not mistaken for an
+unreproduced experiment.
+
 ## Repository layout
 
 - `notebooks/`: four modernized paper workflows plus three exact legacy
@@ -194,5 +210,7 @@ patches, and writes Figure 30 to
 - [x] Reproduce the Notebook 02 manuscript outputs for Figures 17--26.
 - [ ] Rebuild the 250,000-row paper artifact from raw Sintel frames.
 - [x] Modernize and validate the boundary double-cover experiment and Figure 30.
+- [x] Classify deterministic conceptual illustrations as preserved manuscript
+  assets rather than required computational reproductions.
 - [ ] Generate a figure-to-command manifest.
 - [ ] Decide public data hosting and repository license.

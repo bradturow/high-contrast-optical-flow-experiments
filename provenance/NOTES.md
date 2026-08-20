@@ -43,5 +43,15 @@ Notebook 01 deliberately does not reconstruct manuscript Figure 8. That figure
 is a contextual reproduction of projections from Adams et al. built from a
 separate six-set cover, rather than the 16-set cover used for the paper's bundle
 calculation. The submitted asset remains part of the manuscript provenance,
-while Notebook 01's local PCA panels inspect the fibers of the actual cover used
-to compute Figures 14--16.
+and its canonical copy remains in the manuscript source archive. Notebook 01's
+local PCA panels instead inspect the fibers of the actual cover used to compute
+Figures 14--16.
+
+The deterministic model artwork in Figures 2--5, 11--13, 29 and 31 is also
+preserved rather than rebuilt as a separate public workflow. These figures
+illustrate analytic definitions and model families; they do not contain Sintel
+measurements, stochastic simulations or inferred topological results. Their
+canonical assets remain in the submitted manuscript source archive, while the
+recovered step-edge/model notebooks remain here. Together they provide adequate
+provenance, while the modern public notebooks remain focused on scientific
+computations whose rerun validates a claim in the manuscript.

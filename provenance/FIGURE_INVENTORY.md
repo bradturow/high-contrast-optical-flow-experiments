@@ -28,18 +28,18 @@ mathematical procedure.
 | No. | LaTeX label | Included image file(s) | Kind | Proposed owner | Status and next action |
 |---:|---|---|---|---|---|
 | 1 | `fig: FramesSintel` | `KEEPER_A.pdf`, `KEEPER_C.pdf` | Contextual data | Notebook 00 | **Partial.** Notebook 00 now renders a reproducible frame/flow overlay when raw Sintel is available. The exact scene/frame choices used for `KEEPER_A.pdf` and `KEEPER_C.pdf` still need to be identified. |
-| 2 | `Range_Step_Annulus` | `Binary_Step_Edge_Range_AnnulusB.pdf` | Conceptual model | Model figures | **Legacy source.** The step-edge notebook contains the annulus construction. |
-| 3 | `Range_DCT` | `Scalar_DCT.pdf` | Analytic basis | Model figures | **Pending.** The basis is deterministic, but the exact plotting cell has not yet been matched to a preserved public source. |
-| 4 | `Flow_DCT` | `DCT_flow_patches_labeled.pdf` | Analytic basis | Model figures | **Pending.** The optical-flow DCT utilities are present in the old Circle Bundles material; add a self-contained plotting cell. |
-| 5 | `Optical_Flow_Torus` | `Model_Patch_Diagram.pdf` | Conceptual model | Model figures | **Legacy source.** The step-edge/model and synthetic optical-flow notebooks contain the torus sampling and patch-lattice construction. |
+| 2 | `Range_Step_Annulus` | `Binary_Step_Edge_Range_AnnulusB.pdf` | Conceptual model | Preserved manuscript asset | **Preserve.** This deterministic explanatory diagram is not an experimental result. Its canonical PDF remains in the manuscript archive and its recovered step-edge source is retained here. |
+| 3 | `Range_DCT` | `Scalar_DCT.pdf` | Analytic basis | Preserved manuscript asset | **Preserve.** The DCT basis is deterministic and available through Circle Bundles; its canonical illustration remains in the manuscript archive rather than being treated as a missing computation. |
+| 4 | `Flow_DCT` | `DCT_flow_patches_labeled.pdf` | Analytic basis | Preserved manuscript asset | **Preserve.** The optical-flow DCT basis is deterministic and available through Circle Bundles; its canonical illustration remains in the manuscript archive. |
+| 5 | `Optical_Flow_Torus` | `Model_Patch_Diagram.pdf` | Conceptual model | Preserved manuscript asset | **Preserve.** The model is exercised directly by the scientific notebooks; its canonical patch lattice remains in the manuscript archive and its recovered source is retained here. |
 | 6 | `Global_Ripsers` | `Global_Ripsers.pdf` | Data and simulation | Notebook 01 | **Reproduced in substance.** Notebook 01 now reconstructs the complete six-panel comparison. The $X(1500,50)$ and $X(1500,30)$ diagrams match the submitted diagram counts exactly. The synthetic panels use a new documented seed and the current contrast-renormalized noise convention because the historical seed and final normalization step were not recorded. |
 | 7 | `sample_predom_dirs` | `Real_Opt_Flow_Sample.pdf` | Data | Notebook 01 | **Reproduced.** Notebook 01 deterministically displays angle-spaced patches labeled by predominant direction and writes the stable publication PDF. The historical exact sample indices were not recorded. |
-| 8 | `Adams_fiber_projections` | `Adams_Projections_fibers.pdf` | Data | Preserved manuscript asset | **Preserved.** This contextual reproduction of Adams et al. uses a separate six-set cover that is not an input to the later bundle analysis. The submitted asset is retained rather than rebuilding that auxiliary cover; Notebook 01 instead shows local PCA for the actual 16-set cover used in the computation. |
+| 8 | `Adams_fiber_projections` | `Adams_Projections_fibers.pdf` | Data | Preserved manuscript asset | **Preserved.** This contextual reproduction of Adams et al. uses a separate six-set cover that is not an input to the later bundle analysis. Its canonical asset remains in the manuscript archive; Notebook 01 instead shows local PCA for the actual 16-set cover used in the computation. |
 | 9 | `Weak_Predom_Dir_Samples` | `Real_Opt_Flow_Sample_No_Dirs_A.pdf`, `Real_Opt_Flow_Sample_No_Dirs_B.pdf` | Data | Sintel diagnostics / Notebook 01 | **Partial.** Notebook 01 computes directionality; the two paper-specific low-directionality sample panels still need deterministic selection and export. |
 | 10 | `Distributions_Of_Directionality` | `directionality_distribution.pdf` | Data | Notebook 00 | **Reproduced.** Notebook 00 recomputes full $X$, $X(1500,30)$, $X(1500,50)$ and $X(50,60)$ from the portable artifact and recreates the submitted four-curve comparison under the stable paper filename. |
-| 11 | `Antipatches` | `sample_patches_anti_patches.pdf` | Conceptual model | Model figures | **Legacy source.** Rebuild from the deterministic model-patch functions. |
-| 12 | `Decreasing_Directionality` | `Varying_DirectionalityC.pdf`, `Varying_Directionality.pdf` | Conceptual model | Model figures | **Legacy source.** Regenerate the two fixed-parameter model paths as one paper composite. |
-| 13 | `Circle_Of_Low_Directionality` | `Circle_Of_Low_Directionality.pdf` | Conceptual model | Model figures | **Legacy source.** Regenerate from the limiting model circle. |
+| 11 | `Antipatches` | `sample_patches_anti_patches.pdf` | Conceptual model | Preserved manuscript asset | **Preserve.** This deterministic illustration is not a data-dependent result. Its canonical PDF remains in the manuscript archive and the recovered model source remains here. |
+| 12 | `Decreasing_Directionality` | `Varying_DirectionalityC.pdf`, `Varying_Directionality.pdf` | Conceptual model | Preserved manuscript asset | **Preserve.** These fixed-parameter model paths illustrate the definition of directionality; their canonical PDFs remain in the manuscript archive rather than requiring a separate reproduction workflow. |
+| 13 | `Circle_Of_Low_Directionality` | `Circle_Of_Low_Directionality.pdf` | Conceptual model | Preserved manuscript asset | **Preserve.** The limiting model circle is analytic and deterministic; its canonical illustration remains in the manuscript archive and its source remains here. |
 | 14 | `Nerve_With_Cochains` | `Real_Opt_Flow_Triv_Correlations.pdf`, `Real_Oft_Nerve.pdf` | Data / bundle result | Notebook 01 | **Reproduced.** Notebook 01 computes the 16 overlap correlations, labeled nerve and characteristic classes and writes both stable publication PDFs. Circular-coordinate gauge choices can rotate or reflect local parametrizations. |
 | 15 | `Recovered_Patch_Diagrams` | `opt_flow_torus.pdf` | Data / bundle result | Notebook 01 | **Reproduced.** The publication profile recovers the high-directionality lattice, expected count and stable paper export using the global bundle coordinates restricted to this subset. |
 | 16 | `low_directionality_recovered_patches` | `opt_flow_torus_low.pdf` | Data / bundle result | Notebook 01 | **Reproduced.** The publication profile recovers the low-directionality lattice, expected count and stable paper export. |
@@ -55,9 +55,9 @@ mathematical procedure.
 | 26 | `fig:Quadratic_Patches` | `Quadratic_Patches.pdf` | Model/data interpretation | Notebook 02 | **Reproduced.** One deterministic representative from each residual component recreates the outlier/quadratic-patch panel. |
 | 27 | `fig:HC1_Sample_Projections` | `HC_Fiber_Projections.png` | Data | Sintel diagnostics | **Legacy source.** Rebuild the top-one-percent contrast sample and its fiber projections from the recovered preprocessing artifact. |
 | 28 | `Labeled_Frames` | `Labeled_FrameD.png`, `Labeled_FrameB.png`, `Labeled_FrameE.png` | Contextual data | Sintel diagnostics | **Legacy source.** The frame-labeling functions and contrast thresholds are present; make the frame choices explicit and deterministic. |
-| 29 | `Optical_Flow_Annulus` | `Binary_Step_Edge_Opt_Flow_AnnulusB.pdf` | Conceptual model | Model figures | **Legacy source.** The recovered step-edge checkpoint contains the optical-flow annulus export. |
+| 29 | `Optical_Flow_Annulus` | `Binary_Step_Edge_Opt_Flow_AnnulusB.pdf` | Conceptual model | Preserved manuscript asset | **Preserve.** The recovered step-edge source here and canonical PDF in the manuscript archive document this deterministic annulus; it is not a separate experiment. |
 | 30 | `Boundary_Torus` | `boundary_torus.pdf` | Data / bundle result | Notebook 03 | **Reproduced.** Notebook 03 constructs the lifted cover with the current $S^1$ angular metric, confirms $w_1=0$ and Euler class zero, computes global toroidal coordinates, and regenerates the stable paper PDF. |
-| 31 | `All_Binary_Range_Patches` | `All_Binary_Step_Range_Patches.pdf` | Appendix model catalog | Model figures | **Legacy source.** The step-edge notebook deterministically constructs all 56 patches. |
+| 31 | `All_Binary_Range_Patches` | `All_Binary_Step_Range_Patches.pdf` | Appendix model catalog | Preserved manuscript asset | **Preserve.** The step-edge notebook deterministically constructs all 56 patches; retain that source here and the canonical catalog in the manuscript archive rather than adding a publication workflow. |
 
 ## Recommended public workflows
 
@@ -70,12 +70,16 @@ follows:
 3. **Fiberwise clustering (Notebook 02):** figures 17--26, with model helpers
    used for figures 20 and 26.
 4. **Boundary double cover (Notebook 03):** figure 30.
-5. **Deterministic model figures:** figures 2--5, 11--13, 20, 26, 29 and 31.
+5. **Preserved conceptual/model artwork:** figures 2--5, 11--13, 29 and 31.
+   Their canonical assets remain in the manuscript archive and their recovered
+   generating sources remain here; no separate public execution notebook is
+   required.
 
 Notebook 00 now completes figure 10 and supplies the reusable raw-frame overlay
 needed to identify figure 1. Notebook 02 reproduces figures 17--26 and records
 every stable output filename in its run record. Notebook 03 reproduces figure
 30 from the portable boundary artifact. Notebook 01 reproduces figures 6, 7 and
-14--16 while preserving figure 8 by design. The next useful pass is to recover
-the exact scene/frame selections for figures 1 and 28, or to continue with the
-deterministic model figures.
+14--16 while preserving figure 8 by design. Figures 20 and 26 remain part of
+the executed Notebook 02 workflow. The remaining figure work is confined to
+the Sintel-dependent Figures 1, 9, 27 and 28; rebuilding the paper artifact
+from raw frames is the other major reproducibility task.

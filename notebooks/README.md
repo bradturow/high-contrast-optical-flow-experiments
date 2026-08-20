@@ -4,6 +4,13 @@
 `02_fiberwise_clustering.ipynb`, and `03_boundary_double_cover.ipynb` are the
 modernized, runnable experiments.
 
+There is deliberately no separate notebook for the deterministic model artwork
+in manuscript Figures 2--5, 11--13, 29 and 31. Those explanatory diagrams do
+not report experimental results; their canonical PDFs remain in the submitted
+manuscript source archive and their recovered source notebooks are preserved
+here as provenance. The public notebooks focus on the data-dependent
+computations that support the paper's scientific claims.
+
 Notebook 00 is a cleaned-up continuation of the recovered *Exploring The Sintel
 Dataset* notebook. It loads the portable preprocessed artifact, supports quick
 and paper profiles, reproduces the manuscript's four-way directionality
