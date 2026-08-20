@@ -38,3 +38,10 @@ Notebook 03 then constructs its 16-set lifted cover directly with the current
 $S^1$ angular metric. It records the difference from the legacy chord-distance
 parameterization, confirms the boundary bundle is orientable with zero Euler
 class, and regenerates Figure 30.
+
+Notebook 01 deliberately does not reconstruct manuscript Figure 8. That figure
+is a contextual reproduction of projections from Adams et al. built from a
+separate six-set cover, rather than the 16-set cover used for the paper's bundle
+calculation. The submitted asset remains part of the manuscript provenance,
+while Notebook 01's local PCA panels inspect the fibers of the actual cover used
+to compute Figures 14--16.

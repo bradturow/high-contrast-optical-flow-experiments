@@ -20,7 +20,10 @@ loading. Its paper profile reconstructs the six-panel direct-persistence
 comparison in Figure 6. The two empirical panels match the submitted diagrams
 exactly; the synthetic panels use a documented deterministic seed and the
 current Circle Bundles noise-normalization convention because those historical
-details were not recorded.
+details were not recorded. It also writes stable publication outputs for
+Figures 7 and 14--16. Figure 8 is preserved as a contextual manuscript asset:
+it uses a separate six-set Adams-style cover, while the notebook's local PCA
+panels inspect the actual 16-set cover used in the bundle computation.
 
 Notebook 02 keeps the recovered fiberwise-clustering analysis visible through
 direct `circle_bundles` calls. It is deliberately publication-only: it

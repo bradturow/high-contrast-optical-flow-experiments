@@ -120,10 +120,13 @@ For the manuscript-scale analysis, set `OPTICAL_FLOW_PROFILE` and
 `OPTICAL_FLOW_PREPROCESSED` to `configs/paper.toml` and a compatible 250,000-row
 portable artifact, respectively.
 
-Notebook 01's paper profile also writes `results/paper/figures/Global_Ripsers.pdf`.
-Its two empirical persistence panels match the submitted Figure 6 diagrams
-exactly. The four noisy synthetic panels use an explicit modern seed and noise
-normalization; the corresponding historical choices were not recorded.
+Notebook 01's paper profile writes stable manuscript files for Figures 6, 7 and
+14--16 under `results/paper/figures/`. Its two empirical persistence panels
+match the submitted Figure 6 diagrams exactly. The four noisy synthetic panels
+use an explicit modern seed and noise normalization; the corresponding
+historical choices were not recorded. Figure 8 is intentionally retained as a
+contextual manuscript asset because it uses a separate Adams-style six-set
+cover rather than the 16-set cover used for the bundle computation.
 
 ## Run the fiberwise-clustering experiment
 

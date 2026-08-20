@@ -33,16 +33,16 @@ mathematical procedure.
 | 4 | `Flow_DCT` | `DCT_flow_patches_labeled.pdf` | Analytic basis | Model figures | **Pending.** The optical-flow DCT utilities are present in the old Circle Bundles material; add a self-contained plotting cell. |
 | 5 | `Optical_Flow_Torus` | `Model_Patch_Diagram.pdf` | Conceptual model | Model figures | **Legacy source.** The step-edge/model and synthetic optical-flow notebooks contain the torus sampling and patch-lattice construction. |
 | 6 | `Global_Ripsers` | `Global_Ripsers.pdf` | Data and simulation | Notebook 01 | **Reproduced in substance.** Notebook 01 now reconstructs the complete six-panel comparison. The $X(1500,50)$ and $X(1500,30)$ diagrams match the submitted diagram counts exactly. The synthetic panels use a new documented seed and the current contrast-renormalized noise convention because the historical seed and final normalization step were not recorded. |
-| 7 | `sample_predom_dirs` | `Real_Opt_Flow_Sample.pdf` | Data | Notebook 01 | **Reproduced.** Notebook 01 displays patches arranged and labeled by predominant direction; add the publication export name and fixed visual sampling. |
-| 8 | `Adams_fiber_projections` | `Adams_Projections_fibers.pdf` | Data | Notebook 01 | **Legacy source.** The manuscript uses specified DCT-plane projections, whereas Notebook 01 currently shows local PCA. Recover the DCT projection cell rather than treating those plots as identical. |
+| 7 | `sample_predom_dirs` | `Real_Opt_Flow_Sample.pdf` | Data | Notebook 01 | **Reproduced.** Notebook 01 deterministically displays angle-spaced patches labeled by predominant direction and writes the stable publication PDF. The historical exact sample indices were not recorded. |
+| 8 | `Adams_fiber_projections` | `Adams_Projections_fibers.pdf` | Data | Preserved manuscript asset | **Preserved.** This contextual reproduction of Adams et al. uses a separate six-set cover that is not an input to the later bundle analysis. The submitted asset is retained rather than rebuilding that auxiliary cover; Notebook 01 instead shows local PCA for the actual 16-set cover used in the computation. |
 | 9 | `Weak_Predom_Dir_Samples` | `Real_Opt_Flow_Sample_No_Dirs_A.pdf`, `Real_Opt_Flow_Sample_No_Dirs_B.pdf` | Data | Sintel diagnostics / Notebook 01 | **Partial.** Notebook 01 computes directionality; the two paper-specific low-directionality sample panels still need deterministic selection and export. |
 | 10 | `Distributions_Of_Directionality` | `directionality_distribution.pdf` | Data | Notebook 00 | **Reproduced.** Notebook 00 recomputes full $X$, $X(1500,30)$, $X(1500,50)$ and $X(50,60)$ from the portable artifact and recreates the submitted four-curve comparison under the stable paper filename. |
 | 11 | `Antipatches` | `sample_patches_anti_patches.pdf` | Conceptual model | Model figures | **Legacy source.** Rebuild from the deterministic model-patch functions. |
 | 12 | `Decreasing_Directionality` | `Varying_DirectionalityC.pdf`, `Varying_Directionality.pdf` | Conceptual model | Model figures | **Legacy source.** Regenerate the two fixed-parameter model paths as one paper composite. |
 | 13 | `Circle_Of_Low_Directionality` | `Circle_Of_Low_Directionality.pdf` | Conceptual model | Model figures | **Legacy source.** Regenerate from the limiting model circle. |
-| 14 | `Nerve_With_Cochains` | `Real_Opt_Flow_Triv_Correlations.pdf`, `Real_Oft_Nerve.pdf` | Data / bundle result | Notebook 01 | **Partial.** Notebook 01 computes the local trivializations and characteristic classes, but the exact correlation and labeled-nerve panels are not yet exported. |
-| 15 | `Recovered_Patch_Diagrams` | `opt_flow_torus.pdf` | Data / bundle result | Notebook 01 | **Reproduced.** The publication profile recovers the high-directionality lattice and expected counts. Add stable selection and the paper export name. |
-| 16 | `low_directionality_recovered_patches` | `opt_flow_torus_low.pdf` | Data / bundle result | Notebook 01 | **Reproduced.** The publication profile recovers the low-directionality lattice and expected counts. Add stable selection and the paper export name. |
+| 14 | `Nerve_With_Cochains` | `Real_Opt_Flow_Triv_Correlations.pdf`, `Real_Oft_Nerve.pdf` | Data / bundle result | Notebook 01 | **Reproduced.** Notebook 01 computes the 16 overlap correlations, labeled nerve and characteristic classes and writes both stable publication PDFs. Circular-coordinate gauge choices can rotate or reflect local parametrizations. |
+| 15 | `Recovered_Patch_Diagrams` | `opt_flow_torus.pdf` | Data / bundle result | Notebook 01 | **Reproduced.** The publication profile recovers the high-directionality lattice, expected count and stable paper export using the global bundle coordinates restricted to this subset. |
+| 16 | `low_directionality_recovered_patches` | `opt_flow_torus_low.pdf` | Data / bundle result | Notebook 01 | **Reproduced.** The publication profile recovers the low-directionality lattice, expected count and stable paper export. |
 | 17 | `Combined_Sample_Figure` | `Sample_Projections.pdf`, `Sample_Projections_rips.pdf` | Data | Notebook 02 | **Reproduced.** Notebook 02 regenerates the three local PCA projections and matching per-fiber persistence diagrams. |
 | 18 | `Summary_Part1` | `Sample_Clustered_Fibers_summary.pdf` | Data / clustering | Notebook 02 | **Reproduced.** The three-panel clustering summary and all saved counts match the executed legacy run. |
 | 19 | `Sample_Clustered_Fibers` | `Sample_Clustered_Fibers.pdf` | Data / clustering | Notebook 02 | **Reproduced.** The three selected fibers are displayed with their DBSCAN labels under the stable paper filename. |
@@ -65,7 +65,8 @@ The 31 manuscript figures do not require 31 notebooks. They group naturally as
 follows:
 
 1. **Sintel data diagnostics (Notebook 00):** figures 1, 9, 10, 27 and 28.
-2. **Extended optical-flow torus (Notebook 01):** figures 6--8 and 14--16.
+2. **Extended optical-flow torus (Notebook 01):** figures 6, 7 and 14--16,
+   with figure 8 retained as a contextual manuscript asset.
 3. **Fiberwise clustering (Notebook 02):** figures 17--26, with model helpers
    used for figures 20 and 26.
 4. **Boundary double cover (Notebook 03):** figure 30.
@@ -74,6 +75,7 @@ follows:
 Notebook 00 now completes figure 10 and supplies the reusable raw-frame overlay
 needed to identify figure 1. Notebook 02 reproduces figures 17--26 and records
 every stable output filename in its run record. Notebook 03 reproduces figure
-30 from the portable boundary artifact. The next useful pass is to recover the
-exact scene/frame selections for figures 1 and 28, or to continue with the
-missing Notebook 01 panels 8 and 14.
+30 from the portable boundary artifact. Notebook 01 reproduces figures 6, 7 and
+14--16 while preserving figure 8 by design. The next useful pass is to recover
+the exact scene/frame selections for figures 1 and 28, or to continue with the
+deterministic model figures.
